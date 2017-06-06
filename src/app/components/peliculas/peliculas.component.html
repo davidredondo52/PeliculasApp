@@ -1,3 +1,22 @@
-<p>
-  peliculas works!
-</p>
+<div class="card" style="width: 20rem;" *ngFor="let item of list">
+  
+</div>
+
+<div class="container">
+	<h2 class="text-center">Películas Populares</h2>
+	<hr>
+	<div class="col-md-9">
+	<div class="row">
+	<div class="col-md-3 text-center puntero" 	
+	*ngFor="let k of peliculasPopulares | keys ;let i = index"
+	[routerLink]="['/pelicula',peliculasPopulares[k].id]">
+	 
+	<img [src]="peliculasPopulares[k].poster_path | imagen" alt="" class="img-fluid img-thumbnail">
+	 <h4 class="card-title">{{peliculasPopulares[k].original_title}}</h4>
+	   
+	<hr>
+	</div>
+	</div>
+
+</div>
+</div>

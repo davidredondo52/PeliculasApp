@@ -10,13 +10,17 @@ import { PeliculaComponent } from './components/peliculas/pelicula.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { APP_ROUTING } from './app.routes';
+import { KeysPipe } from './pipes/keys.pipe';
+import { ImagenPipe } from './pipes/imagen.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     PeliculasComponent,
     PeliculaComponent,
-    NavbarComponent
+    NavbarComponent,
+    KeysPipe,
+    ImagenPipe
   ],
   imports: [
     BrowserModule,
