@@ -31,8 +31,7 @@ export class PeliculasService {
   getPelicula(id:string)
   {
     let url = `${ this.urlMoviedb }/movie/${id}?api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
-   //let url2 ='https://api.themoviedb.org/3/movie/166426?api_key=b34437ffb23946e6990e148820884519&language=es&callback=JSONP_CALLBACK' ;
-
+   
     return this.jsonp.get( url)
                 .map( res=> res.json());
   }
@@ -44,4 +43,17 @@ getPopularesNinos(){
                 .map( res=> res.json());
   }
 
+  getCartelera()
+  {
+    let desde=new Date();
+    let hasta=new Date();
+    hasta.setDate(hasta.getDate()+7);
+    let desdeStr=`${desde.getFullYear()}-${desde.getMonth()+1}-${desde.getDate()}`;
+    let hastaStr=`${hasta.getFullYear()}-${hasta.getMonth()+1}-${hasta.getDate()}`;
+   
+    let url = `${this.urlMoviedb}/discover/movie?primary_release_date.gte=${desdeStr}&primary_release_date.lte=${hastaStr}&api_key=${this.apikey}&language=es&callback=JSONP_CALLBACK`;
+ 
+    return this.jsonp.get( url )
+                .map( res=> res.json());
+  }
 }

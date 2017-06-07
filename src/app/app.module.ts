@@ -13,6 +13,7 @@ import { APP_ROUTING } from './app.routes';
 import { KeysPipe } from './pipes/keys.pipe';
 import { ImagenPipe } from './pipes/imagen.pipe';
 import { BuscadorComponent } from './components/buscador/buscador.component';
+import { HomeComponent } from './components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
     NavbarComponent,
     KeysPipe,
     ImagenPipe,
-    BuscadorComponent
+    BuscadorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
