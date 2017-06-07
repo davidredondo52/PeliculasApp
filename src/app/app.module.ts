@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { APP_ROUTING } from './app.routes';
 import { KeysPipe } from './pipes/keys.pipe';
 import { ImagenPipe } from './pipes/imagen.pipe';
+import { BuscadorComponent } from './components/buscador/buscador.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ImagenPipe } from './pipes/imagen.pipe';
     PeliculaComponent,
     NavbarComponent,
     KeysPipe,
-    ImagenPipe
+    ImagenPipe,
+    BuscadorComponent
   ],
   imports: [
     BrowserModule,

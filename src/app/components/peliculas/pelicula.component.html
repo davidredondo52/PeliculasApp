@@ -1,12 +1,22 @@
 <p>
 
 </p>
-<div class="container card-inverse">
- <div class="jumbotron">
-        <h1 class="display-3">  {{pelicula?.original_title}}</h1>
+<div class="container" *ngIf="pelicula">
+ <h3>  {{pelicula.original_title}}</h3>
+        <hr>
+ <div class="row" >
+       
+      
+        <div class="col-md-4">
         <p>
         <img [src]="pelicula.poster_path | imagen" alt="" class="img-fluid img-thumbnail">
         </p>
-        <p class="lead">  {{pelicula.overview}}</p>
+        </div>
+        <div class="col-md-8">
+         {{pelicula.overview}}
+        </div>
+        
   </div>
+   
+  <button class="btn float-left btn-outline-primary" [routerLink]="['/peliculas']">Volver</button>
 </div>
