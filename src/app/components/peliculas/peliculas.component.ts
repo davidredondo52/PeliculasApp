@@ -12,7 +12,7 @@ peliculasPopularesNinos:any []=[];
 constructor(private _service:PeliculasService){
 	this._service.getPopulares().subscribe(data=>{
 	
-		this.peliculasPopulares=data.results;
+		this.peliculasPopulares=data;
 	});
 
 }

@@ -12,7 +12,7 @@
 	*ngFor="let k of peliculasPopulares | keys ;let i = index"
 	[routerLink]="['/pelicula',peliculasPopulares[k].id]">
 	 
-	<img [src]="peliculasPopulares[k].poster_path | imagen" alt="" class="img-fluid img-thumbnail">
+	<img [src]="peliculasPopulares[k] | imagen" alt="" class="img-fluid img-thumbnail">
 	 <h5 class="card-title">{{peliculasPopulares[k].original_title}}</h5>
 	   
 	<hr>

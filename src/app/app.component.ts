@@ -10,7 +10,7 @@ export class AppComponent {
 
 
 constructor(private _service:PeliculasService){
-	this._service.getPopulares().subscribe(data=>console.log(data));
+	//this._service.getPopulares().subscribe(data=>console.log(data));
 }
 
 

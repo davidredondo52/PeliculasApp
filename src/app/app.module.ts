@@ -11,9 +11,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 
 import { APP_ROUTING } from './app.routes';
 import { KeysPipe } from './pipes/keys.pipe';
-import { ImagenPipe } from './pipes/imagen.pipe';
+
 import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HomeComponent } from './components/home/home.component';
+import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
+import { GaleriaComponent } from './components/galeria/galeria.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +24,10 @@ import { HomeComponent } from './components/home/home.component';
     PeliculaComponent,
     NavbarComponent,
     KeysPipe,
-    ImagenPipe,
     BuscadorComponent,
-    HomeComponent
+    HomeComponent,
+    PeliculaImagenPipe,
+    GaleriaComponent
   ],
   imports: [
     BrowserModule,
