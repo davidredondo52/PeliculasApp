@@ -12,10 +12,10 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
   }
 
-    buscarPelicula(termino:string)
+  buscarPelicula(texto:string)
   {
-  	console.log("Buscar Heroe "+termino);
-  	this.router.navigate(["/buscaHeroe",termino]);
+  	console.log("Buscar pelicula "+texto);
+  	this.router.navigate(["/buscarPelicula",texto]);
   }
 
 }
