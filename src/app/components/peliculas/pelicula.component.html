@@ -1,19 +1,24 @@
-<p>
-
-</p>
-<div class="container" *ngIf="pelicula">
- <h3>  {{pelicula.original_title}}</h3>
+<br>
+<div class="container main-container animated fadeIn fast" *ngIf="pelicula">
+ <h1>  {{pelicula.original_title}}</h1>
         <hr>
  <div class="row" >
        
       
         <div class="col-md-4">
         <p>
-        <img [src]="pelicula.poster_path | imagen" alt="" class="img-fluid img-thumbnail">
+        <img [src]="pelicula | imagen:true" [alt]="pelicula.original_title" class="img-fluid img-thumbnail">
         </p>
         </div>
         <div class="col-md-8">
-         {{pelicula.overview}}
+        <h3>Sipnosis</h3>
+        <hr>
+        <p> {{pelicula.overview}}</p>
+        <h4>Frase Celebre</h4>
+         <p> {{pelicula.tagline}}</p>
+         <p>Calificación : <span class="badge badge-primary">{{pelicula.popularity | number:".0-2"}}</span></p>
+         <br>
+         <p>Votos: <span class="badge badge-primary">{{pelicula.vote_average}}</span></p>
         </div>
         
   </div>

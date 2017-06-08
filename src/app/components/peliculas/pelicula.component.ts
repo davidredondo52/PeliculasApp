@@ -8,7 +8,8 @@ import { Pelicula } from '../../interfaces/pelicula';
 })
 export class PeliculaComponent implements OnInit {
 
-pelicula:Pelicula;
+ pelicula:Pelicula;
+
  constructor(private activatedRoute:ActivatedRoute,
   			 private _service:PeliculasService) 
   {
@@ -24,7 +25,12 @@ pelicula:Pelicula;
   			console.log("id"+id);
 
   			this._service.getPelicula(id).subscribe(
-  				data=>this.pelicula=data);
+  				data=>{
+            this.pelicula=data
+                  console.log("data"+data);
+                }
+
+          );
 
   			
   		});

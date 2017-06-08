@@ -16,6 +16,7 @@ import { BuscadorComponent } from './components/buscador/buscador.component';
 import { HomeComponent } from './components/home/home.component';
 import { PeliculaImagenPipe } from './pipes/pelicula-imagen.pipe';
 import { GaleriaComponent } from './components/galeria/galeria.component';
+import { BuscaComponent } from './components/buscador/busca.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { GaleriaComponent } from './components/galeria/galeria.component';
     BuscadorComponent,
     HomeComponent,
     PeliculaImagenPipe,
-    GaleriaComponent
+    GaleriaComponent,
+    BuscaComponent
   ],
   imports: [
     BrowserModule,
