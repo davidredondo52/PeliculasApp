@@ -10,14 +10,17 @@ export class PeliculaComponent implements OnInit {
 
  pelicula:Pelicula;
  regresarA:string="";
-
+ busqueda:string="";
  constructor(private activatedRoute:ActivatedRoute,
-  			 private _service:PeliculasService) 
+  			     private _service:PeliculasService) 
   {
     this.activatedRoute.params.subscribe(parametros=>
     {
       this.regresarA=parametros['pag'];
-
+      if(parametros['busqueda'])
+      {
+      this.busqueda=parametros['busqueda'];
+      }
       this._service.getPelicula(parametros['id']).subscribe(
           data=>{
                   this.pelicula=data
@@ -29,22 +32,7 @@ export class PeliculaComponent implements OnInit {
   ngOnInit() 
   {
 
-  	/*this.activatedRoute.params.map(
-  		parametros=>parametros['id']
-  		).subscribe(id=>{
-
-  			console.log("id"+id);
-
-  			this._service.getPelicula(id).subscribe(
-  				data=>{
-            this.pelicula=data
-                  console.log("data"+data);
-                }
-
-          );
-
-  			
-  		});*/
+  
   	}
 
 }

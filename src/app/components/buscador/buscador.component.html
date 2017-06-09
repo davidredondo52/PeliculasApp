@@ -1,18 +1,14 @@
 <div class="container main-container">
-	<h2 class="text-center">Buscador</h2>
-	<hr>
-	<div class="row">
-	
-	
-	<div class="col-md-3 text-center puntero" 	
-	*ngFor="let k of peliculas | keys ;let i = index"
-	[routerLink]="['/pelicula',peliculas[k].id]">
-	 
-	<img [src]="peliculas[k].poster_path | imagen" alt="" class="img-fluid img-thumbnail">
-	 <h5 class="card-title">{{peliculas[k].original_title}}</h5>
-	   
-	<hr>
-	</div>
-	</div>
-
+<div class="row animated fadeIn fast">
+<div class="card-columns" >
+  <div class="card" *ngFor="let pelicula of peliculas">
+    <img class="card-img-top img-fluid" [src]="pelicula|imagen" [alt]="pelicula.original_title">
+    <div class="card-block">
+      <h4 class="card-title">{{pelicula.original_title}}</h4>
+      <p class="card-text text-justify">{{pelicula.overview | slice:0:300}}...</p>
+      <button class="btn btn-outline-primary" 
+      [routerLink]="['/pelicula',pelicula.id,'buscaPelicula',buscar]">Ver más</button>
+    </div>
+  </div>
+  </div>
 </div>

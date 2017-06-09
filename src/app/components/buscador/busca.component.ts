@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PeliculasService } from '../../services/peliculas.service';
-
+import { ActivatedRoute} from '@angular/router';
 @Component({
   selector: 'app-busca',
   templateUrl: './busca.component.html'
@@ -8,9 +8,19 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class BuscaComponent implements OnInit {
 
   buscar:string="";
-  regresarA:string="";
+ // regresarA:string="";
 
-  constructor(private _peliculasService:PeliculasService) { }
+  constructor(private _peliculasService:PeliculasService,
+              private _router:ActivatedRoute) {
+
+      this._router.params.subscribe(parametros=>{
+        console.log(parametros)
+        if(parametros['texto']){
+          this.buscar=parametros['texto'];
+          this.buscarPelicula();
+        }
+      }) 
+   }
 
   ngOnInit() {
   }
@@ -24,7 +34,7 @@ export class BuscaComponent implements OnInit {
     console.log("this_buscar=>"+this.buscar);
   	this._peliculasService.buscarPelicula(this.buscar).subscribe(
       data=>{
-        console.log("BUSCAA")
+        
         console.log(data)});
 
   }

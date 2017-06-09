@@ -11,7 +11,7 @@
 		</div>
 	</div>
 </div>
-<div class="row">
+<div class="row animated fadeIn fast">
 <div class="card-columns" >
   <div class="card" *ngFor="let pelicula of _peliculasService.peliculas">
     <img class="card-img-top img-fluid" [src]="pelicula|imagen" [alt]="pelicula.original_title">
@@ -19,7 +19,7 @@
       <h4 class="card-title">{{pelicula.original_title}}</h4>
       <p class="card-text text-justify">{{pelicula.overview | slice:0:300}}...</p>
       <button class="btn btn-outline-primary" 
-      [routerLink]="['/pelicula',pelicula.id,'buscaPelicula']">Ver más</button>
+      [routerLink]="['/pelicula',pelicula.id,'buscaPelicula',buscar]">Ver más</button>
     </div>
   </div>
   </div>

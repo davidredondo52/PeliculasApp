@@ -10,7 +10,7 @@
     <ul class="navbar-nav mr-auto">
     <!-- Active-->
       <li class="nav-item" routerLinkActive="active">
-        <a class="nav-link" [routerLink]="['home']">Peliculas </a>
+        <a class="nav-link" [routerLink]="['home']">Home </a>
       </li>
       
       <li class="nav-item" routerLinkActive="active">
@@ -19,8 +19,12 @@
      
     </ul>
     <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Buscar Pelicula" (keyup.enter)="buscarPelicula(buscarTexto.value)" #buscarTexto>
-      <button (click)="buscarPelicula(buscarTexto.value)" class="btn btn-outline-primary my-2 my-sm-0" type="button">Buscar</button>
+      <input class="form-control mr-sm-2" type="text" 
+      placeholder="Buscar Pelicula" 
+      (keyup.enter)="buscarPelicula(buscarTexto.value)" #buscarTexto>
+      <button (click)="buscarPelicula(buscarTexto.value)" 
+      class="btn btn-outline-primary my-2 my-sm-0" 
+      type="button">Buscar</button>
     </form>
   </div>
 </nav>
