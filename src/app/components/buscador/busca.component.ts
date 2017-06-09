@@ -8,6 +8,7 @@ import { PeliculasService } from '../../services/peliculas.service';
 export class BuscaComponent implements OnInit {
 
   buscar:string="";
+  regresarA:string="";
 
   constructor(private _peliculasService:PeliculasService) { }
 
@@ -21,7 +22,10 @@ export class BuscaComponent implements OnInit {
   		return;
   	}
     console.log("this_buscar=>"+this.buscar);
-  	this._peliculasService.buscarPelicula(this.buscar).subscribe(data=>console.log(data));
+  	this._peliculasService.buscarPelicula(this.buscar).subscribe(
+      data=>{
+        console.log("BUSCAA")
+        console.log(data)});
 
   }
 

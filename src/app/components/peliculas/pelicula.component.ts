@@ -9,16 +9,27 @@ import { Pelicula } from '../../interfaces/pelicula';
 export class PeliculaComponent implements OnInit {
 
  pelicula:Pelicula;
+ regresarA:string="";
 
  constructor(private activatedRoute:ActivatedRoute,
   			 private _service:PeliculasService) 
   {
+    this.activatedRoute.params.subscribe(parametros=>
+    {
+      this.regresarA=parametros['pag'];
 
+      this._service.getPelicula(parametros['id']).subscribe(
+          data=>{
+                  this.pelicula=data
+                  console.log("data"+data);
+                })
+    })
   }
 
   ngOnInit() 
   {
-  	this.activatedRoute.params.map(
+
+  	/*this.activatedRoute.params.map(
   		parametros=>parametros['id']
   		).subscribe(id=>{
 
@@ -33,7 +44,7 @@ export class PeliculaComponent implements OnInit {
           );
 
   			
-  		});
+  		});*/
   	}
 
 }

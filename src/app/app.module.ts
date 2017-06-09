@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { PeliculasService } from './services/peliculas.service';
-import { PeliculasComponent } from './components/peliculas/peliculas.component';
+
 import { PeliculaComponent } from './components/peliculas/pelicula.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 
@@ -20,8 +20,7 @@ import { BuscaComponent } from './components/buscador/busca.component';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PeliculasComponent,
+    AppComponent,    
     PeliculaComponent,
     NavbarComponent,
     KeysPipe,
